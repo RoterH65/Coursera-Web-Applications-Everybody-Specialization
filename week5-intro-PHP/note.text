@@ -1,0 +1,15 @@
+# PHP - Expressions
+    # Operators of Notes
+        - Increment/ Decrement (++--)
+        - String concatenation (.)
+        - Equality (== !=)
+        - Identity (=== !==)
+        - Ternary (?:)
+        - Side-effect Assignment (+= _= .= etc)
+        - Ignore the rarely-used bitwise Operators(>> << ^|&)
+
+# PHP - Control
+    # Conditional - if
+        - Logical Operators(== != < > <= >= && || !)
+        - Curly braces 
+            
