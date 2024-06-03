@@ -1,0 +1,11 @@
+# Array Functions
+    - array_key_exits($key,$ar): Return True if key is set in the array
+    - isset($ar['key']): Return TRue if key is set in the array
+    - count($ar): How many elements in an array
+    - is_array($ar): Return True if a variable is an array
+    - sort(&ar): Sorts the array values (loses key)
+    - ksort($ar): Sorts the array by key
+    - asort($ar): Sorts array by value, keeping key association
+    - shuffle($ar): Shuffles the array into random order
+    - is_numeric(mixed $value): Determines if the given variable is a number or a numeric string.
+# HTTP &PHP Arrays 
