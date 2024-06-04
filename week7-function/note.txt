@@ -1,0 +1,6 @@
+# PHP - Modularity
+    include "header.php": - pull the file in header
+    include_once "header.pho": - Pull the file in here unlexss it has already been pulled in before
+    require "header.php": pull in the file here and die if it is missing 
+    require_once "header.php": you can guess what this means
+    // These can look like functions - require_once("header.php")
