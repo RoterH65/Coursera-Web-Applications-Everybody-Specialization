@@ -1,0 +1,29 @@
+# Using GET and POST with FORMS
+    ## Rules of the POST/GET Choice
+        - Post is used when data is being created or modified
+        - Get is used when your are reading or searching things
+        - Web search spiders will follow GET URLS but generally not POST URLS
+        - Get URLS should be "idempotent" - the same URL should give the "same thing" each time you access it
+        - Get has an upper limit of the number of bytes of parameters and values (think about 2K)
+    
+    ## HTML Inputs Types
+        ### Other input Types
+            - Text
+            - Password
+            - Radio Button 
+            - Check box
+            - Select / Drop-Down
+            - Textarea
+
+    # Incoming Data Validation
+        - Make sure all user data is present and the correct format before proceeding
+            - Non-empty strlen($var) > 0
+            - A number is_numeric($var) 
+            - An email address strpos($var,"@") >0
+            - Or filter_var($var, FILTER_VALIDATE_EMAIL) !== false
+    
+    # Model-View-Controller
+        -  A model that defines the elements of a web application and how they interact
+        - View - Produces output
+        - Model - handles data
+        - Controller - Orchestration / Routing
