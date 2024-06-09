@@ -1,0 +1,43 @@
+# Object Oriented Concepts
+    - OOP is a programming paradigm that represents concepts as "Object" that have data fields (attributes that describe the Object) 
+    and associated procedures known as methods. Object, which are usually instances of classes, are used to interact with one another 
+    to design application and computer programs
+    - Definitions
+        - Class : a template
+            - Defines the abstract characteristics of a thing (Object), including the thing's characteristics (its attributes, fields,
+             or properties) and the thing's behaviors (the thing it can do, or methods, operations, or features). One might say that 
+             a class is a blueprint or factory that describe the nature of something. 
+        - Method: A defined capability of a class 
+            - An object's abilities. In language, methods are verbs. 
+        - Object or Instance: A particular instance of a class
+            - Instance: One can have an instance of a class or a particular object. The instance is the actual object created at runtime.
+
+# Object life cycle
+    - Object are created, used and discarded
+    - We have special blocks of code (methods) that get called 
+        - At the moment of creation (constructor)
+        - At the moment of destruction (destructor)
+    - constructors are used a lot
+        - Constructor: The primary purpose of constructor is to set up some instance variables to have the proper initial values when the 
+        objects is created
+    - Destructors are seldom used 
+    - Many instances
+        - We can create lost of objects - the class is the template for the object 
+        - We can store each distinct object in its own variable
+        - We call this having multiple instances of the same class 
+        - Each instance has its own copy of the instance variables
+# Object Inheritance in PHP
+    - Inheritance 
+        - When we make a new class we can reuse an existing class and inherit all the capabilities of an existing of an existing class and
+        our inherit all the capabilities of an existing class and then add our own little bit to make our new class 
+        - Another form of store and reuse 
+        - Write once - reuse many times
+        - The new class (child) has all the capabilities of the old class (parent) - and then some more
+    - Visibility 
+        Class member variable also have scope
+            - Public: can be accessed outside the class, inside the class, and in derived classes
+            - Protected: can be accessed inside the class, and in defined classes
+            - Private: can only be accessed inside the class (i.e private variables are not visible in derived classes)    
+    # Building an Object from Scratch
+        - Sometimes a developer will prefer to make an object with public key-value pairs rather than array
+        - Use where appropriate
