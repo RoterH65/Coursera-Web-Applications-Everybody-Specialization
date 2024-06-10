@@ -48,6 +48,14 @@ if (isset($_POST['delete']) && isset($_POST['user_id'])) {
         <p>Password:<input type="password" name="password"></p>
         <p><input type="submit" value="Add New"></p>
     </form>
-</body>
 
+    <table border="1">
+        <?php 
+        $stmt = $pdo->query("SELECT make,year,mileage FROM autos");
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            
+        }
+        ?>
+    </table>
+</body>
 </html>
