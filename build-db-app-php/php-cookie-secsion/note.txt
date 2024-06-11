@@ -1,0 +1,46 @@
+# Cookies 
+    # Multi-User/ Multi-Browser
+        - When a server is interacting with many different browsers at the same time, 
+        the server needs to know *which* browser a particular request came from
+        - Request/ Response initially was stateless - all browsers looked identical. 
+        This was really bad and did not last very long at all.
+    # Cookies in the browser
+        - Cookies are marked as to the web address they come from. The browser only
+        sends back cookies that were originally set by the same web server
+        - Cookies have an expiration date. Some last for years, others are short-term 
+        and go away as soon as the browser is closed
+
+# Sessions 
+    # In the Server - Sessions
+        - In most server applications, as soon as we meet a new (unmarked) browser we
+        create a Sessions
+        - We set a session cookie to be stored in the browser, which indicates the 
+        session id in use - gives this browser a unique "mark".
+        - The creation and destruction of sessions is handled by a web framework
+        or some utility code that we use in our applications 
+    # Session Identifier
+        - A large, random number that we place in a browser cookie the first time
+        we encounter a browser
+        - This number is used to pick from the many sessions that the server has active
+        at any one time
+        - Server software stores data in the session that it wants to have from one request
+        to another from the same browser
+        - Shopping cart or login information is stored in the session in the server
+    # PHP Sessions 
+        - We can establish / initialize a PHP session by calling session_start()
+        before any output has come out
+        - If the user has cookies set, we can use the array $_SESSION to store data from
+        one request to the next with a particular browser
+        - We have a bit of data that persists from one request to the next
+        - By default, these are stored in a temporary folder on disk
+
+# Sessions without Cookies
+    # PHP Session Without Cookies
+        - For a simple application handling login, logout, and shopping cart-like information, cookie sessions are sufficient
+        - But if an application needs to function within an iframe, or have more than one session active 
+        (i.e, multiple tabs to the same site), we cannot use session cookies
+        - PHP has nice support for maintaining a session without a cookie
+    # A Whole Host of Issues
+        - Session id is not automatically added in JavaScript, Ajax, Redirect, or other elements of HTML 
+        - With the session id on the URL, folks can email URLs or even bookmark them and be logged in 
+        - We will come back to these
