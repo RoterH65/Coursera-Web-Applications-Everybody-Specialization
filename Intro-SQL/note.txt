@@ -32,3 +32,4 @@
             - Foreign key: generally an integer key pointing to a row in another table
                 + A Foreign key is when a table has a column containing a key that points to the primary key of another table
                 + When all primary keys are integers, then all foreign keys are integer. This is good - very good.
+

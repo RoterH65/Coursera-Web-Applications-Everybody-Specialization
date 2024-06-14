@@ -1,0 +1,30 @@
+# Redirect, Routing, and Authentication
+    ## HTTP Status Codes
+        - 200 OK
+        - 404 Not Found
+        - 302 Found/Moved
+    ## HTTP Location Header
+        - If your application has not yet sent any data, it can send a special header as part of the HTTP Response.
+        - The redirect header includes a URL that the browser is supposed to forward itself to
+
+# Post / Redirect
+    ## Post / Refresh / :(
+        - Once you do a POST, if you fresh, the browser will re-send the Post data a second time
+        - The user gets a pop-up that tries to explain what is about to happen
+    ## No Double Posts
+        - Typically POST requests are adding or modifying data whilst GET requests view data
+        - It may be dangerous to do the same POST twice (say withdrawing funds from a bank account)    
+        - So the browser insists on asking the user (out of your control)
+        - Kind of an ugly UX / bad usability
+    ## POST Redirect Rule 
+        - The simple rule for pages intended for a browser is to never generate a page with HTML content
+        when the app receives POST data.
+        - Must redirect somewhere - even to the same script - forcing the browser to make a GET after the POST
+        
+# Implementing Login and Logout 
+    ## Session / Authentication
+        - Having a session is not the same as being logged in 
+        - Generally you have a session the instant you connect to a web site 
+        - The Session ID cookie is set when the first page is delivered
+        - Login puts user information in the session (stored in the server)
+        - Logout removes user information from the session
