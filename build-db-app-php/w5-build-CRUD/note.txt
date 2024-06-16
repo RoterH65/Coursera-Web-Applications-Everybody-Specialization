@@ -1,0 +1,7 @@
+# CRUD 
+    ## CRUD Pattern 
+        - When we store things in database tables we generally need 
+            - CREATE - Insert a new row
+            - READ - Read existing row(s)
+            - UPDATE - Change a some values of a record
+            - DELETE - Delete a record 
