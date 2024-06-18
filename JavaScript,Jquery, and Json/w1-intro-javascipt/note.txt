@@ -1,0 +1,58 @@
+# Basic JavaScript
+    ## Syntax Errors
+        - As in any language, We can make syntax Errors
+        - By default, browsers silently eat any kind of JavaScript error
+        - But the code stops running in that file or script section
+    ## Seeing the Errors    
+        - Since the end user really cannot take any action to fix the JavaScript
+        coming as part of web page, the browsers eats the errors 
+        - As developer, we need to look for the errors - sometimes it take a minute 
+        to even remember to check for a JS error
+    ## Console Logging 
+        - Debugging using albert() can get tiring - sometimes you want to record what happen 
+        in case something goes wrong
+        - Console.log("String") - and many more functions
+    ## Using the Debugger (Chrome)
+        - Get into a source view
+        - Click on a line of JavaScript to set a breakpoint 
+        - Reload the page
+# JavaScript - Core Language Features 
+    ## Statements
+        - White space and newlines do not matter. 
+        - Statements end with a semicolon 
+        - There are cases where you can leave the semicolon off, but don't bother exploiting this feature
+        just add semicolons like in C, Java, PHP, C++, etc
+    ## Variable Names
+        - Valid Characters: a-z, A-Z, 0-9, _ and $
+        - Must not start with a number
+        - Names are case sensitive
+        - Starting with a dollar sign in considered "tacky"
+    ## String Constants
+        - Double or Single Quotes - Single quotes are used typically in JavaScript and we let HTML use double 
+        quotes to keep our minds a little sane 
+        - Escaping - done using the backslash character
+    ## String Concatenation
+        - JavaScript string concatenation is like Python and Java and uses "+", versus PHP which uses ","
+        - Like PHP "." operator, it automatically converts non-string values to strings as needed
+    ## Variable Typing
+        - JavaScript is a loosely typed language and does automatically type conversion when evaluating 
+        expressions.
+    ## Variable COnversion 
+        - If a string cannot be converted to a number, you end up with "Not a Number" of "NaN". It is a value, 
+        but it is sticky - all operations with NaN as a operand end up with NaN
+    ## Functions 
+        - Functions use a typical syntax and are indicated using the function keyword 
+        - The return keyword functions as expected
+# JavaScript - Arrays and Control Structures
+    ## Arrays in JS 
+        - JS supports both linear arrays and associative structures, but the associative structures are actually
+        objects.
+ # JS - DOM
+    ## DOMs are not identical
+        - Not all browsers represent their page exactly the same way 
+        - This makes it a challenge to keep all of your JS working on all browsers
+        - It also means you need to test your code over and over on each browser
+    ## Using getElementById()
+        - In order not to have to traverse each unique DOM, we use a function call that all browsers supports.
+        This allows us to bypass the DOM structure and jump to a particular tag within the DOM and manipulate 
+        that tag

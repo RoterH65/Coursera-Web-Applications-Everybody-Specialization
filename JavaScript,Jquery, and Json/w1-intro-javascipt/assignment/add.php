@@ -11,31 +11,33 @@ if(isset($_POST['cancel'])) {
 }
 
 if (
-    isset($_POST['fn']) && isset($_POST['ln'])
-    && isset($_POST['email']) && isset($_POST['headline']) && isset($_POST['summary'])
+    isset($_POST['make']) && isset($_POST['model'])
+    && isset($_POST['year']) && isset($_POST['mileage'])
 ) {
     // Data validation
-    if (strlen($_POST['fn']) < 1 || strlen($_POST['ln']) < 1 || strlen($_POST['email']) < 1 || strlen($_POST['headline']) < 1 || strlen($_POST['summary']) < 1) {
+    if (strlen($_POST['make']) < 1 || strlen($_POST['model']) < 1 || strlen($_POST['year']) < 1 || strlen($_POST['mileage']) < 1) {
         $_SESSION['error'] = 'All fields are required';
         header("Location: add.php");
         return;
     }
-    
-    if (strpos($_POST['email'], '@') === false) {
-        $_SESSION['error'] = 'Email address must contain @';
+
+    if (!is_numeric($_POST['year']) || !is_numeric($_POST['mileage'])) {
+        $_SESSION['error'] = 'Year must be an integer';
         header("Location: add.php");
         return;
     }
 
-    $sql = "INSERT INTO Profile (make, model, year, mileage)
-              VALUES (:make, :model, :year, :mileage)";
-    $stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare('INSERT INTO Profile
+        (user_id, first_name, last_name, email, headline, summary)
+        VALUES ( :uid, :fn, :ln, :em, :he, :su)');
     $stmt->execute(array(
-        ':make' => $_POST['make'],
-        ':model' => $_POST['model'],
-        ':year' => $_POST['year'],
-        ':mileage' => $_POST['mileage']
-    ));
+        ':uid' => $_SESSION['user_id'],
+        ':fn' => $_POST['first_name'],
+        ':ln' => $_POST['last_name'],
+        ':em' => $_POST['email'],
+        ':he' => $_POST['headline'],
+        ':su' => $_POST['summary'])
+    );
     $_SESSION['success'] = 'Record added';
     header('Location: index.php');
     return;
@@ -55,7 +57,7 @@ if (
     <div class="container">
         <?php
         echo "<h1>";
-        echo 'Adding Profile for ';
+        echo 'Tracking Automobiles for ';
         echo htmlentities($_SESSION['name']);
         echo "</h1>\n";
         if (isset($_SESSION['error'])) {
@@ -64,20 +66,17 @@ if (
         }
         ?>
         <form method="post">
-            <p>First Name:
-                <input type="text" name="fn">
+            <p>Make:
+                <input type="text" name="make">
             </p>
-            <p>Last Name:
-                <input type="text" name="ln">
+            <p>Model:
+                <input type="text" name="model">
             </p>
-            <p>Email:
-                <input type="text" name="email">
+            <p>Year:
+                <input type="text" name="year">
             </p>
-            <p>Headline:
-                <input type="text" name="headline">
-            </p>
-            <p>Summary:
-                <input type="text" name="summary">
+            <p>Mileage:
+                <input type="text" name="mileage">
             </p>
             <input type="submit" value="Add New" />
             <input type="submit" value="Cancel" name="cancel">

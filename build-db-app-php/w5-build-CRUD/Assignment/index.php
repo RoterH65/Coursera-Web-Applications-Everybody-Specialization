@@ -17,11 +17,12 @@ require_once "pdo.php";
         if (!isset($_SESSION['login'])) {
             echo '
             <p>
-            <a href="login.php">Please log in</a>
+            <a href="login.php">Please Log In</a>
             </p>
             <p>Attempt to
                 <a href="add.php">add.php</a> without logging in
             </p>';
+            
         } else {
             if (isset($_SESSION['error'])) {
                 echo '<p style="color:red">' . $_SESSION['error'] . "</p>\n";
@@ -71,4 +72,3 @@ require_once "pdo.php";
 
     </div>
 </body>
-</html>
